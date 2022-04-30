@@ -3,6 +3,7 @@ namespace SpriteKind {
     export const NPC = SpriteKind.create()
     export const Protection = SpriteKind.create()
     export const Tree = SpriteKind.create()
+    export const Treetwo = SpriteKind.create()
 }
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -242,7 +243,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 let Move_Animation = false
 let Endangered_animals_saved = 0
-let Tree: Sprite = null
+let Tree2: Sprite = null
 let Alex_Rove: Sprite = null
 Alex_Rove = sprites.create(img`
     . . . . f f f f . . . . . 
@@ -405,7 +406,7 @@ scene.setBackgroundImage(img`
 tiles.setCurrentTilemap(tilemap`level1`)
 scene.cameraFollowSprite(Alex_Rove)
 for (let value of tiles.getTilesByType(assets.tile`myTile`)) {
-    Tree = sprites.create(img`
+    Tree2 = sprites.create(img`
         ...............cc...............
         ............ccc65c66............
         ............c6c55c76............
@@ -439,7 +440,7 @@ for (let value of tiles.getTilesByType(assets.tile`myTile`)) {
         ..............fef...............
         ...............f................
         `, SpriteKind.Tree)
-    tiles.placeOnTile(Tree, value)
+    tiles.placeOnTile(Tree2, value)
     tiles.setTileAt(value, assets.tile`transparency16`)
 }
 Alex_Rove.setPosition(20, 93)
